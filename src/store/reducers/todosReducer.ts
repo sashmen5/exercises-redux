@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actionTypes";
+import {ADD_TODO, TodosActionTypes, TOGGLE_TODO} from "../actionTypes";
 
 export interface Todo {
   id: number
@@ -13,7 +13,7 @@ const initialState: Todo[] = [
     {id: 2534, completed: false, content: 'asdas'},
 ];
 
-const todosReducer = (state = initialState, action: any) => {
+const todosReducer = (state = initialState, action: TodosActionTypes): Todo[] => {
   switch (action.type) {
     case ADD_TODO: {
       const { id, content } = action.payload;

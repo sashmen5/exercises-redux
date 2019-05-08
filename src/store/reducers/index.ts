@@ -1,7 +1,11 @@
 import { combineReducers } from "redux";
-import counter from './counterReducer';
-import todos from "./todosReducer";
+import counterReducer from './counterReducer';
+import todosReducer from "./todosReducer";
 
-const rootReducer = combineReducers({ counter, todos })
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  todos: todosReducer
+});
 
+export type AppState = ReturnType<typeof rootReducer>
 export default rootReducer;

@@ -1,8 +1,10 @@
 import React from 'react';
 // @ts-ignore
 import {useSelector} from "react-redux";
-import Todo from "./Todo";
 import styled from "styled-components";
+import {AppState} from "../store/reducers";
+import TodoItem from "./TodoItem";
+import {Todo} from "../store/reducers/todosReducer";
 
 const List = styled.ul`
 width: 400px;
@@ -10,7 +12,7 @@ width: 400px;
 `;
 
 const TodoList: React.FC = () => {
-  const todos: any[] = useSelector((state: any) => state.todos);
+  const todos: Todo[] = useSelector((state: AppState) => state.todos);
 
   return (
       <>
@@ -18,7 +20,7 @@ const TodoList: React.FC = () => {
         <List>
           {
             todos && todos.length
-              ? todos.map((todo) => <Todo key={`${todo.id}`} todo={todo}/>)
+              ? todos.map((todo) => <TodoItem key={`${todo.id}`} todo={todo}/>)
               : "No todos, start adding!"
           }
         </List>

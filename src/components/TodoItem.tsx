@@ -22,7 +22,7 @@ const TodoContent = styled.div<TodoContentProps>`
   color: ${props => props.completed ? 'lightgray' : ''}
 `;
 
-const Todo: React.FC<TodoProps> = ({todo}: TodoProps) => {
+const TodoItem: React.FC<TodoProps> = ({todo}: TodoProps) => {
   const dispatch = useDispatch();
 
   return (
@@ -33,4 +33,4 @@ const Todo: React.FC<TodoProps> = ({todo}: TodoProps) => {
   )
 };
 
-export default Todo;
+export default TodoItem;
