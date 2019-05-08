@@ -7,8 +7,8 @@ import TodoItem from "./TodoItem";
 import {Todo} from "../store/reducers/todosReducer";
 
 const List = styled.ul`
-width: 400px;
-    padding: 0;
+  width: 400px;
+  padding: 0;
 `;
 
 const TodoList: React.FC = () => {
@@ -16,12 +16,12 @@ const TodoList: React.FC = () => {
 
   return (
       <>
-        <div>TodoList</div>
+        <h3>To Do List</h3>
         <List>
           {
             todos && todos.length
-              ? todos.map((todo) => <TodoItem key={`${todo.id}`} todo={todo}/>)
-              : "No todos, start adding!"
+                ? todos.map((todo) => <TodoItem key={`${todo.id}`} todo={todo}/>)
+                : "No todos, start adding!"
           }
         </List>
       </>

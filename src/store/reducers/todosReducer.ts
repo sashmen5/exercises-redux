@@ -7,10 +7,7 @@ export interface Todo {
 }
 
 const initialState: Todo[] = [
-    {id: 234, completed: false, content: 'asdas'},
-    {id: 2324, completed: true, content: 'asdas'},
-    {id: 2334, completed: false, content: 'asdas'},
-    {id: 2534, completed: false, content: 'asdas'},
+    {id: 234, completed: true, content: 'Finish "Todo list" exercise'}
 ];
 
 const todosReducer = (state = initialState, action: TodosActionTypes): Todo[] => {
